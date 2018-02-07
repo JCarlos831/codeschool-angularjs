@@ -11,12 +11,21 @@
 <body ng-controller="RentalController as rental">
     <h1 class="text-center">{{"Juan's Car Rentals"}}</h1>
     
-    <div ng-repeat="product in rental.products">
-        <h3>{{product.year}} {{product.make}} {{product.model}} {{product.type}}</h3>
-        <p>{{product.description}}</p>
-        <h4>{{product.price | currency}} per day</h4>
-        <button ng-show="product.available">Rent Me</button>
-    </div>
+    <!--<div ng-repeat="product in rental.products">-->
+    <!--    <h3>{{product.year}} {{product.make}} {{product.model}} {{product.type}}</h3>-->
+    <!--    <p>{{product.description}}</p>-->
+    <!--    <h4>{{product.price | currency}} per day</h4>-->
+    <!--    <button ng-show="product.available">Rent Me</button>-->
+    <!--</div>-->
+    
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="product in rental.products">
+            <h3>{{product.year}} {{product.make}} {{product.model}} {{product.type}}</h3>
+            <img ng-src="{{product.images[0].full}}"/>
+            <h4>{{product.price | currency}} per day</h4>
+        </li>
+    </ul>
+    
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js" integrity="sha256-7ngBGhPctUEyXLD6ha53TFUaqhBCnXFOi712aqBq094=" crossorigin="anonymous"></script>
