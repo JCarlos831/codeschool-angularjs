@@ -12,10 +12,7 @@
     <h1 class="text-center">{{"Juan's Car Rentals"}}</h1>
     
     <div ng-repeat="product in rental.products">
-        <h3>{{product.make}}</h3>
-        <h4>{{product.year}}</h4>
-        <h4>{{product.model}}</h4>
-        <h4>{{product.type}}</h4>
+        <h3>{{product.year}} {{product.make}} {{product.model}} {{product.type}}</h3>
         <p>{{product.description}}</p>
         <h4>{{product.price | currency}} per day</h4>
         <button ng-show="product.available">Rent Me</button>
