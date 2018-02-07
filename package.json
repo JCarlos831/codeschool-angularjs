@@ -1,7 +1,7 @@
 {
   "name": "codeschool-angularjs",
   "version": "1.0.0",
-  "description": "Shaping Up With AngularJS",
+  "description": "Car Rental With AngularJS",
   "main": "index.html",
   "dependencies": {
     "popper.js": "^1.12.9",
