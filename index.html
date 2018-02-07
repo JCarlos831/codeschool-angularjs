@@ -18,13 +18,35 @@
     <!--    <button ng-show="product.available">Rent Me</button>-->
     <!--</div>-->
     
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="product in rental.products">
+    <ul class="list-group" ng-repeat="product in rental.products">
+        <li class="list-group-item" >
             <h3>{{product.year}} {{product.make}} {{product.model}} {{product.type}}</h3>
             <img ng-src="{{product.images[0].full}}"/>
             <h4>{{product.price | currency}} per day</h4>
+                <ul class="nav nav-pills">
+                    <li><a href ng-click="tab = 1">Description</a></li>
+                    <li><a href ng-click="tab = 2">Specs</a></li>
+                </ul>
+                <div class="panel" ng-show="tab === 1">
+                    <!--<h4>Description</h4>-->
+                    <p>{{product.description}}</p>
+                </div>
+                <div class="panel" ng-show="tab === 2">
+                    <ul>
+                        <li>
+                            {{product.specs[0].transmission}}
+                        </li>
+                        <li>
+                            {{product.specs[0].drivetrain}}
+                        </li>
+                        <li>
+                            {{product.specs[0].mpg}}
+                        </li>
+                    </ul>
+                </div>
         </li>
     </ul>
+
     
     
 

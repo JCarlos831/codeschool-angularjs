@@ -20,6 +20,13 @@
             {
              full: 'images/cars/2018-Dodge-Challenger.png'
             }
+            ],
+        specs: [
+            {
+            transmission: 'Automatic',
+            drivetrain: 'Rear Wheel Drive 3.6L',
+            mpg: '19 City / 30 Hwy'
+            }
             ]
     },
     {
@@ -34,7 +41,15 @@
         images: [
             {
                 full: 'images/cars/2018-chevy-camaro.png'
-            }]
+            }
+            ],
+        specs: [
+            {
+            transmission: 'Manual',
+            drivetrain: 'Rear Wheel Drive 2.0L',
+            mpg: '20 City / 30 Hwy'
+            }
+            ]
     }
     ];
     
