@@ -2,8 +2,30 @@
 (function(){
     var app = angular.module('store', []);
     
-    app.controller('RentalController', function(){
+    app.controller('RentalController', function($scope){
         this.products = cars;
+        
+        $scope.cars = cars;
+        $scope.decreaseNumAvail = function(product) {
+            console.log(--product.numAvailable);
+            if(product.numAvailable <= 0 ){
+                product.unavailable = !product.unavailable;
+            }
+        };
+    
+    });
+    
+    app.controller('PanelController', function(){
+        this.tab = 1;
+        
+        this.selectTab = function(setTab){
+            this.tab = setTab;
+        };
+        
+        this.isSelected = function(checkTab){
+            return this.tab === checkTab;
+        };
+        
     });
     
     var cars = [
@@ -16,6 +38,9 @@
         price: 69.99,
         available: true,
         unavailable: false,
+        unavailableText: 'UNAVAILABLE',
+        numAvailable: 10,
+        numBooked: 0,
         images: [
             {
              full: 'images/cars/2018-Dodge-Challenger.png'
@@ -25,7 +50,7 @@
             {
             transmission: 'Automatic',
             drivetrain: 'Rear Wheel Drive 3.6L',
-            mpg: '19 City / 30 Hwy'
+            mpg: '19 mpg City / 30 mpg Hwy'
             }
             ]
     },
@@ -38,6 +63,9 @@
         price: 79.99,
         available: true,
         unavailable: false,
+        unavailableText: 'UNAVAILABLE',
+        numAvailable: 7,
+        numBooked: 0,
         images: [
             {
                 full: 'images/cars/2018-chevy-camaro.png'
@@ -47,7 +75,7 @@
             {
             transmission: 'Manual',
             drivetrain: 'Rear Wheel Drive 2.0L',
-            mpg: '20 City / 30 Hwy'
+            mpg: '20 mpg City / 30 mpg Hwy'
             }
             ]
     }
